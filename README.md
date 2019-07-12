@@ -40,4 +40,4 @@ If you like to check the images without opening the ports as its show in docker-
      $ docker ps
      $ docker exec -it  2a5929305ca9 sh
 
-but replace 2a5929305ca9 with the image id you see with "$ docker os".
+but replace 2a5929305ca9 with the image id you see with "$ docker ps".
