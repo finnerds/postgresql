@@ -11,6 +11,10 @@ To start:
 
      $ docker-compose up
 
+To check your setup:
+
+     $ docker ps
+
 To Login:
 :
      $ psql -U postgres -H 127.0.0.1
