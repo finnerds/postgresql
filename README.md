@@ -11,9 +11,9 @@ To start:
 
      $ docker-compose up
 
-To Login:
-:
-     $ psql -U postgres -H 127.0.0.1
+To Login (our temp available portnumber, remove in production, and use a docker-swarm network for internal connection):
+
+     $ psql -h 127.0.0.1 -U postgres -p 5432
 
 To check the status run psql commands below:
 
