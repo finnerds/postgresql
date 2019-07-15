@@ -6,6 +6,7 @@ RUN chmod +x /usr/bin/gosu
 
 RUN apk add --update iputils
 
+COPY ./create_extension.sh /docker-entrypoint-initdb.d/create_extension.sh
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]

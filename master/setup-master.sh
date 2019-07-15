@@ -3,7 +3,6 @@ set -e
 
 echo "host replication all 0.0.0.0/0 md5" >> "$PGDATA/pg_hba.conf"
 
-
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
 CREATE USER $PG_REP_USER REPLICATION LOGIN CONNECTION LIMIT 100 ENCRYPTED PASSWORD '$PG_REP_PASSWORD';
 EOSQL
