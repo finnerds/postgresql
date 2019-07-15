@@ -7,8 +7,6 @@ services:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
-      - PG_MAX_WAL_SENDERS=8
-      - PG_WAL_KEEP_SEGMENTS=8
     ports:
       - 5432:5432
     networks:
@@ -24,7 +22,7 @@ services:
       - PG_REP_PASSWORD=replication
       - PG_REP_FROM=cluster_a_master
     ports:
-      - 5433:5432
+      - 5432
     networks:
       default:
         aliases:
@@ -37,10 +35,8 @@ services:
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
       - PG_REP_FROM=cluster_a_master
-      - PG_MAX_WAL_SENDERS=8
-      - PG_WAL_KEEP_SEGMENTS=8
     ports:
-      - 5434:5432
+      - 5432
     networks:
       default:
         aliases:
@@ -52,6 +48,8 @@ services:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
+    ports:
+      - 5432
     networks:
       default:
         aliases:
@@ -64,6 +62,8 @@ services:
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
       - PG_REP_FROM=cluster_b_master
+    ports:
+      - 5432
     networks:
       default:
         aliases:
