@@ -9,11 +9,15 @@ The following steps show you how to stream replicate and logicly replicate postg
 
 Cluster A with streaming replication "-", and cluster B with logical replication "|".
 
-## Steps to check
+## Steps to check your setup
 
-### To start:
+### To start
 
      $ docker-compose up
+
+#### To check 
+
+     $ docker ps
 
 ### To Login 
 
