@@ -1,2 +1,1 @@
-# Add HSTORE extension
 CREATE EXTENSION IF NOT EXISTS hstore;

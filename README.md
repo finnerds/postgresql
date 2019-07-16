@@ -8,16 +8,18 @@ One of the biggest advantages of logical over streaming replication is that logi
 
 The following steps show you how to stream replicate replicate postgresql data between masters and standby, as how in the simplified "ascii-art":
 
-    cluster_a_master --> cluster_a_standby_1
-		     |-> cluster_a_standby_2
+    cluster_a_master --> standby_a_1
+		             |-> standby_a_2
+                     |-> standby_a_3
+
 		     |
     cluster_b_master --> cluster_b_standby_1
 
 ## Steps to check your setup
 
-### To start
+### To start (one master, and three "standby")
 
-     $ docker-compose up
+     $ docker-compose up --build --scale standby_a=3"
 
 #### To check 
 
@@ -60,6 +62,6 @@ Test what was replicated
 
      SELECT * FROM test_replication;
 
-Test the setup within the slave or logical replicating master
+Test the setup within the standby or logical replicating master
 
      SELECT * FROM pg_stat_replication;

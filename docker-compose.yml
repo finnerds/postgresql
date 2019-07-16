@@ -1,73 +1,52 @@
 version: "3"
 
 services:
-  cluster_a_master:
+  master_a:
     build: ./master
+    labels:
+      com.finnerds.description: "Postgres master a with 'n' standby instances"
     environment:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
     ports:
       - 5432:5432
+    hostname: "master_a"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       default:
         aliases:
           - pg_cluster
 
-  cluster_a_standby_1:
+  standby_a:
     build: ./standby
+    labels:
+      com.finnerds.description: "Postgres standby 'n'"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     environment:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
-      - PG_REP_FROM=cluster_a_master
+      - PG_REP_FROM=master_a
     ports:
       - 5432
+# To be used within $ docker stack deploy with 2 replica, instead two entries as in docker-compose
+#    deploy:
+#      replicas: 3
     networks:
       default:
         aliases:
           - pg_cluster
-
-  cluster_a_standby_2:
-    build: ./standby
-    environment:
-      - POSTGRES_USER=postgres
-      - PG_REP_USER=replication
-      - PG_REP_PASSWORD=replication
-      - PG_REP_FROM=cluster_a_master
-    ports:
-      - 5432
-    networks:
-      default:
-        aliases:
-          - pg_cluster
-
-  cluster_b_master:
-    build: ./master
-    environment:
-      - POSTGRES_USER=postgres
-      - PG_REP_USER=replication
-      - PG_REP_PASSWORD=replication
-    ports:
-      - 5432
-    networks:
-      default:
-        aliases:
-          - pg_cluster
-
-  cluster_b_standby_1:
-    build: ./standby
-    environment:
-      - POSTGRES_USER=postgres
-      - PG_REP_USER=replication
-      - PG_REP_PASSWORD=replication
-      - PG_REP_FROM=cluster_b_master
-    ports:
-      - 5432
-    networks:
-      default:
-        aliases:
-          - pg_cluster
+    depends_on:
+      - master_a
 
 volumes:
   pg_data:

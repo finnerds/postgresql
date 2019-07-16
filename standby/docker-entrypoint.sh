@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -s "$PGDATA/PG_VERSION" ]; then
 	echo "*:*:*:$PG_REP_USER:$PG_REP_PASSWORD" > ~/.pgpass
 	chmod 0600 ~/.pgpass
+
 	until ping -c 1 -W 1 ${PG_REP_FROM}
 	do
 		echo "Waiting for master to ping..."
@@ -28,4 +29,5 @@ EOF
 fi
 
 sed -i 's/wal_level = hot_standby/wal_level = logical/g' ${PGDATA}/postgresql.conf
+
 exec "$@"
