@@ -1,6 +1,7 @@
 # Postgresql logical replication
 
 [![Docker Automated build](https://img.shields.io/docker/automated/finnerds/postgresql/master.svg)]()
+
 [![Docker Automated build](https://img.shields.io/docker/automated/finnerds/postgresql/standby.svg)]()
 
 [![Docker Build Status](https://img.shields.io/docker/build/finnerds/postgresql/master.svg]()
