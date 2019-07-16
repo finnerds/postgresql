@@ -9,6 +9,7 @@ services:
       - PG_REP_PASSWORD=replication
     ports:
       - 5432:5432
+    hostname: db
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -21,7 +22,8 @@ services:
     deploy:
       placement:
         constraints: [node.role == manager]
-          
+    volumes:
+      - 'postgresql_master_data:/var/lib/postgresql/data'      
 
   standby:
     image: 'finnerds/postgres_b:latest'
@@ -36,7 +38,7 @@ services:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
-      - PG_REP_FROM=master_a
+      - PG_REP_FROM=db
     ports:
       - 5432
     depends_on:
@@ -49,6 +51,11 @@ services:
       default:
         aliases:
           - pg_cluster
+    volumes:
+      - 'postgresql_standby_data:/var/lib/postgresql/data'     
 
 volumes:
-  pg_data:
+  postgresql_master_data:
+    driver: local
+  postgresql_standby_data:
+    driver: local
