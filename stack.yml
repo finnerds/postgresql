@@ -26,7 +26,7 @@ services:
       - 'postgresql_master_data:/var/lib/postgresql/data'      
 
   standby:
-    image: 'finnerds/standyql:latest'
+    image: 'finnerds/standbyql:latest'
     labels:
       com.finnerds.description: "Postgres standby 'n'"
     healthcheck:
