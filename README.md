@@ -1,12 +1,12 @@
 # Postgresql logical replication
 
-Version 0.1.0
-
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/standbyql.svg)]() - Master
 
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/postgresql.svg)]() - Standby
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document and all other documents within this repository are to be interpreted as described in RFC 2119.
+
+Version 0.1.0
 
 ## Introduction
 
