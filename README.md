@@ -65,10 +65,13 @@ Test the setup within the standby or logical replicating master
 
      SELECT * FROM pg_stat_replication;
      
-### HSTORE
+## HSTORE
 
 Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL command.
 
+## Healthcheck
+
+Both, docker-compose.yml and stack.yml (docker-swarm, portainer) include a healthcheck.
 
 ## References
 
