@@ -11,8 +11,6 @@ The following steps show you how to stream replicate replicate postgresql data b
     cluster_a_master --> standby_a_1
 		             |-> standby_a_2
                      |-> standby_a_3
-
-		     |
     cluster_b_master --> cluster_b_standby_1
 
 ## Steps to check your setup
@@ -21,7 +19,7 @@ The following steps show you how to stream replicate replicate postgresql data b
 
      $ docker-compose up --build --scale standby_a=3"
 
-#### To check 
+### To check 
 
      $ docker ps
 
@@ -31,14 +29,14 @@ With a temp available portnumber, you should remove it within a production setup
 
      $ psql -h 127.0.0.1 -U postgres -p 5432
 
-### To check 
+### To Check 
 
 Run the "Postgres SQL" commands below at the prompt, and check each time the result:
 
      SELECT * FROM pg_stat_replication;
      SELECT application_name, state, sync_priority, sync_state FROM pg_stat_replication;
 
-### To test
+### To Test
 
 Create a table and insert some data into it
 
@@ -52,7 +50,7 @@ Create a table and insert some data into it
 If you like to check the images without opening the ports, as in the first master instance within docker-compose.yml you can do get into an docker image id via e.g. "exec -it image_id"
 
      $ docker ps
-     $ docker exec -it  2a5929305ca9 sh
+     $ docker exec -it 2a5929305ca9 sh
 
 but replace "2a5929305ca9" with the image id you see when you enter "$ docker ps".
 
