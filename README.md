@@ -48,7 +48,7 @@ Run the "Postgres SQL" commands below at the prompt, and check each time the res
 
 ### To Test
 
-Create a table and insert some data into it
+Create a table (in your master instance) and insert some data into it
 
      CREATE TABLE test_replication (data varchar(100));
      INSERT INTO test_replication VALUES ('https://thecatapi.com/');
@@ -67,11 +67,11 @@ but replace "2a5929305ca9" with the image id you see when you enter "$ docker ps
 Login into to the different instances, and check how fast databases, tables, and data is replicated. 
 Check data on the 'test_replication' table with postgres query below.
 
-Test what was replicated
+Test (in your "read-only") standby what was replicated
 
      SELECT * FROM test_replication;
 
-Test the setup within the standby or logical replicating master
+Test the setup information of the standby or logical replicating master
 
      SELECT * FROM pg_stat_replication;
      
