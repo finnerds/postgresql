@@ -2,7 +2,7 @@ version: "3"
 
 services:
   master:
-    image: 'finnerds/postgres_a:latest'
+    image: 'finnerds/postgresql:latest'
     environment:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
@@ -26,7 +26,7 @@ services:
       - 'postgresql_master_data:/var/lib/postgresql/data'      
 
   standby:
-    image: 'finnerds/postgres_b:latest'
+    image: 'finnerds/standyql:latest'
     labels:
       com.finnerds.description: "Postgres standby 'n'"
     healthcheck:
