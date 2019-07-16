@@ -38,7 +38,7 @@ services:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
       - PG_REP_PASSWORD=replication
-      - PG_REP_FROM=db
+      - PG_REP_FROM=master
     ports:
       - 5432
     depends_on:
