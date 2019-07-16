@@ -79,6 +79,18 @@ Test the setup within the standby or logical replicating master
 
 Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL command.
 
+    hstore.sql
+
+### Healthcheck
+
+Both, "stack.yml" and "docker-compose.yml" include a healthcheck of master and standby
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 ## References
 
 - [Streaming_Replication](https://wiki.postgresql.org/wiki/Streaming_Replication)
