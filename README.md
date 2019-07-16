@@ -1,8 +1,14 @@
 # Postgresql logical replication
 
-[![Docker Automated build](https://img.shields.io/docker/automated/finnerds/postgresql/master.svg]()
+Version 0.1.0
 
-[![Docker Build Status](https://img.shields.io/docker/build/finnerds/postgresql/master.svg)]()
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/standbyql.svg)]() - Master
+
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/postgresql.svg)]() - Standby
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document and all other documents within this repository are to be interpreted as described in RFC 2119.
+
+## Introduction
 
 Logical replication in PostgreSQL allows users to perform a replication of tables and open a standby for writes of all table within a database. Whereas physical replication in PostgreSQL is a block level replication. In this case, each database in the master is replicated to a standby, and the standby is not open for writes ("read-only"). 
 
