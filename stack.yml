@@ -42,7 +42,7 @@ services:
     ports:
       - 5432
     depends_on:
-      - master_a
+      - master
     deploy:
       replicas: 3
       placement:
