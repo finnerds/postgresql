@@ -14,8 +14,8 @@ services:
         aliases:
           - pg_cluster
 
-  cluster_a_slave_1:
-    build: ./slave
+  cluster_a_standby_1:
+    build: ./standby
     environment:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
@@ -28,8 +28,8 @@ services:
         aliases:
           - pg_cluster
 
-  cluster_a_slave_2:
-    build: ./slave
+  cluster_a_standby_2:
+    build: ./standby
     environment:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
@@ -55,8 +55,8 @@ services:
         aliases:
           - pg_cluster
 
-  cluster_b_slave_1:
-    build: ./slave
+  cluster_b_standby_1:
+    build: ./standby
     environment:
       - POSTGRES_USER=postgres
       - PG_REP_USER=replication
