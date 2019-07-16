@@ -9,7 +9,7 @@ services:
       - PG_REP_PASSWORD=replication
     ports:
       - 5432:5432
-    hostname: db
+    hostname: master
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
