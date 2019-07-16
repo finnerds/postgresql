@@ -69,3 +69,11 @@ Test the setup within the standby or logical replicating master
 
 Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL command.
 
+
+## References
+
+- [Streaming_Replication](https://wiki.postgresql.org/wiki/Streaming_Replication)
+- [Replication between postgresql versions using-logical replication](https://www.percona.com/blog/2019/04/04/replication-between-postgresql-versions-using-logical-replication/)
+- [Postgres Replication, with SSL](https://blog.raveland.org/post/postgresql_sr/)
+- [Postgres Replication is "simple"](https://scalegrid.io/blog/getting-started-with-postgresql-streaming-replication/)
+- [Logical replication with Postgres](http://yallalabs.com/linux/how-to-setup-a-logical-replication-on-postgresql-10/)
