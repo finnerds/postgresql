@@ -64,3 +64,8 @@ Test what was replicated
 Test the setup within the standby or logical replicating master
 
      SELECT * FROM pg_stat_replication;
+     
+### HSTORE
+
+Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL command.
+
