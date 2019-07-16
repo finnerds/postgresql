@@ -1,5 +1,9 @@
 # Postgresql logical replication
 
+[![Docker Automated build](https://img.shields.io/docker/automated/finnerds/postgresql.svg)]()
+
+[![Docker Build Status](https://img.shields.io/docker/build/finnerds/postgresql/master.svg]()[![Docker Build Status](https://img.shields.io/docker/build/finnerds/postgresql/standby.svg]()
+
 Logical replication in PostgreSQL allows users to perform a replication of tables and open a standby for writes of all table within a database. Whereas physical replication in PostgreSQL is a block level replication. In this case, each database in the master is replicated to a standby, and the standby is not open for writes ("read-only"). 
 
 With logical replication, a standby can have replication enabled from multiple masters. This could be helpful in situations where you need to replicate data from several PostgreSQL databases (OLTP) to a single PostgreSQL server for reporting and data warehousing.
