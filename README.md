@@ -19,7 +19,7 @@ The following steps show you how to stream replicate replicate postgresql data b
 
      $ docker-compose up --build --scale standby_a=3"
 
-### To see running (starting, healhty) 
+### To see running (health: starting, healhty) 
 
      $ docker ps
 
