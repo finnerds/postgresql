@@ -19,11 +19,11 @@ The following steps show you how to stream replicate replicate postgresql data b
 
      $ docker-compose up --build --scale standby_a=3"
 
-### To check 
+### To see running (starting, healhty) 
 
      $ docker ps
 
-### To Login 
+### To Login into DB
 
 With a temp available portnumber, you should remove it within a production setup, and use a docker-swarm network for your internal connection:
 
@@ -45,7 +45,7 @@ Create a table and insert some data into it
      INSERT INTO test_replication VALUES ('https://www.asciiart.eu/animals/cows');
      INSERT INTO test_replication VALUES ('pg_cluster replication test successful');
 
-### AddOn
+### To Login into Container‚
 
 If you like to check the images without opening the ports, as in the first master instance within docker-compose.yml you can do get into an docker image id via e.g. "exec -it image_id"
 
@@ -54,7 +54,8 @@ If you like to check the images without opening the ports, as in the first maste
 
 but replace "2a5929305ca9" with the image id you see when you enter "$ docker ps".
 
-Login to the different instances, and check how fast databases, tables, and data is replicated. Check data on the 'test_replication' table with postgres query below.
+Login into to the different instances, and check how fast databases, tables, and data is replicated. 
+Check data on the 'test_replication' table with postgres query below.
 
 Test what was replicated
 
