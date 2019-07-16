@@ -5,6 +5,6 @@ FROM postgres:11-alpine
 ENV LANG en_US.utf8
 
 # Add any [sh,sql] script to be executed during setup
-COPY master/*.sql /docker-entrypoint-initdb.d/
-COPY master/*.sh /docker-entrypoint-initdb.d/
+COPY *.sql /docker-entrypoint-initdb.d/
+COPY *.sh /docker-entrypoint-initdb.d/
 RUN chmod a+r /docker-entrypoint-initdb.d/*
