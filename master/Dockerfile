@@ -4,10 +4,7 @@ FROM postgres:11-alpine
 # alpine doesn't require explicit locale-file generation
 ENV LANG en_US.utf8
 
-# Add HSTORE & ROLE via sql during setup
+# Add any [sh,sql] script to be executed during setup
 COPY *.sql /docker-entrypoint-initdb.d/
+COPY *.sh /docker-entrypoint-initdb.d/
 RUN chmod a+r /docker-entrypoint-initdb.d/*
-
-COPY ./setup-master.sh /docker-entrypoint-initdb.d/setup-master.sh
-
-RUN chmod 0666 /docker-entrypoint-initdb.d/setup-master.sh

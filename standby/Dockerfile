@@ -6,8 +6,9 @@ ENV LANG en_US.utf8
 
 RUN apk add --update iputils
 
-# Add HSTORE & ROLE via sql during setup
+# Add any [sh,sql] script to be executed during setup
 COPY *.sql /docker-entrypoint-initdb.d/
+COPY *.sh /docker-entrypoint-initdb.d/
 RUN chmod a+r /docker-entrypoint-initdb.d/*
 
 # /etc/postgresql/11/main/pg_hba.conf
