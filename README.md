@@ -1,13 +1,17 @@
-# Postgresql streaming and logical replication
+# Postgresql logical replication
 
-The following steps show you how to stream replicate and logicly replicate postgresql data between masters and slaves, as how in the simplified "ascii-art"
+Logical replication in PostgreSQL allows users to perform a replication of tables and open a standby for writes of all table within a database. Whereas physical replication in PostgreSQL is a block level replication. In this case, each database in the master is replicated to a standby, and the standby is not open for writes ("read-only"). 
 
-    clustera_master --> clustera_slave1
-		            |-> clustera_slave2
-		            |
-    clusterb_master --> clusterb_slave
+With logical replication, a standby can have replication enabled from multiple masters. This could be helpful in situations where you need to replicate data from several PostgreSQL databases (OLTP) to a single PostgreSQL server for reporting and data warehousing.
 
-Cluster A with streaming replication "-", and cluster B with logical replication "|".
+One of the biggest advantages of logical over streaming replication is that logical replication allows us to replicate changes from an older version PostgreSQL to a later version. 
+
+The following steps show you how to stream replicate replicate postgresql data between masters and standby, as how in the simplified "ascii-art":
+
+    cluster_a_master --> cluster_a_standby_1
+		     |-> cluster_a_standby_2
+		     |
+    cluster_b_master --> cluster_b_standby_1
 
 ## Steps to check your setup
 
