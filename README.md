@@ -55,7 +55,7 @@ Create a table and insert some data into it
      INSERT INTO test_replication VALUES ('https://www.asciiart.eu/animals/cows');
      INSERT INTO test_replication VALUES ('pg_cluster replication test successful');
 
-### To Login into Container‚
+### To Login into container
 
 If you like to check the images without opening the ports, as in the first master instance within docker-compose.yml you can do get into an docker image id via e.g. "exec -it image_id"
 
@@ -81,7 +81,7 @@ Postgresql supports the adding of extensions via SQL commands or shell scripts d
 
     hstore.sql
 
-### Healthcheck
+### HEALTHCHECK
 
 Both, "stack.yml" and "docker-compose.yml" include a healthcheck of master and standby
 
