@@ -91,9 +91,10 @@ Both, [stack.yml](https://github.com/finnerds/postgresql/blob/master/stack.yml) 
 
 ## References
 
-- [Postgres - Logical Replication](https://www.postgresql.org/docs/current/logical-replication-publication.html)
-- [Streaming_Replication](https://wiki.postgresql.org/wiki/Streaming_Replication)
-- [Replication between postgresql versions using-logical replication](https://www.percona.com/blog/2019/04/04/replication-between-postgresql-versions-using-logical-replication/)
-- [Postgres Replication, with SSL](https://blog.raveland.org/post/postgresql_sr/)
-- [Postgres Replication is "simple"](https://scalegrid.io/blog/getting-started-with-postgresql-streaming-replication/)
-- [Logical replication with Postgres](http://yallalabs.com/linux/how-to-setup-a-logical-replication-on-postgresql-10/)
+- [Postgresql - Logical Replication](https://www.postgresql.org/docs/current/logical-replication-publication.html)
+- [Postgresql - Streaming_Replication](https://wiki.postgresql.org/wiki/Streaming_Replication)
+- [Replication between different Postgresql versions using logical replication](https://www.percona.com/blog/2019/04/04/replication-between-postgresql-versions-using-logical-replication/)
+- [Logical replication with Postgresql](http://yallalabs.com/linux/how-to-setup-a-logical-replication-on-postgresql-10/)
+- [Postgresql Replication - add SSL for public postgres servers](https://blog.raveland.org/post/postgresql_sr/)
+- [Postgresql Replication - getting started](https://scalegrid.io/blog/getting-started-with-postgresql-streaming-replication/)
+
