@@ -81,7 +81,7 @@ Postgresql supports the adding of extensions via SQL commands or shell scripts d
 
 ### HEALTHCHECK
 
-Both, [stack.yml](https://github.com/finnerds/postgresql/blob/master/stack.yml) and [docker-compose.yml](https://github.com/finnerds/postgresql/blob/master/docker-compose.yml) include a [healthcheck](https://github.com/finnerds/postgresql/blob/master/docker-compose.yml#L15) for master and standby
+Both, [stack.yml](https://github.com/finnerds/postgresql/blob/master/stack.yml) (for e.g. Docker Swarm with [Portainer](https://www.portainer.io/products-services/portainer-community-edition/) and [docker-compose.yml](https://github.com/finnerds/postgresql/blob/master/docker-compose.yml) include a [healthcheck](https://github.com/finnerds/postgresql/blob/master/docker-compose.yml#L15) for master and standby
 
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
