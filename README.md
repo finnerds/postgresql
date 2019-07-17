@@ -77,7 +77,7 @@ Test the setup information of the standby or logical replicating master
      
 ### HSTORE
 
-Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL [hstore.sql](https://github.com/finnerds/postgresql/blob/master/standby/hstore.sql) command.
+Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL [hstore.sql](https://github.com/finnerds/postgresql/blob/master/standby/hstore.sql) command. Any *.sql files, and any executable *.sh scripts copied into the initialisation [directory](https://github.com/finnerds/postgresql/blob/master/master/Dockerfile#L8) will be executed during the initialisation of the server - before starting the service.
 
 ### HEALTHCHECK
 
