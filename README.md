@@ -77,9 +77,7 @@ Test the setup information of the standby or logical replicating master
      
 ### HSTORE
 
-Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL command.
-
-    [hstore.sql](https://github.com/finnerds/postgresql/blob/master/standby/hstore.sql)
+Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL [hstore.sql](https://github.com/finnerds/postgresql/blob/master/standby/hstore.sql) command.
 
 ### HEALTHCHECK
 
