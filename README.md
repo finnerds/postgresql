@@ -1,8 +1,8 @@
 # Postgresql logical replication
 
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/standbyql.svg)]() - Master
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/standbyql.svg)]() - [Master](https://github.com/finnerds/postgresql/tree/master/master)
 
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/postgresql.svg)]() - Standby
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/finnerds/postgresql.svg)]() - [Standby](https://github.com/finnerds/postgresql/tree/develop/standby)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document and all other documents within this repository are to be interpreted as described in RFC 2119.
 
@@ -79,7 +79,7 @@ Test the setup information of the standby or logical replicating master
 
 Postgresql supports the adding of extensions via SQL commands or shell scripts during the installation. The repository builds by default postgresql with HSTORE support via the included SQL command.
 
-    hstore.sql
+    [hstore.sql](https://github.com/finnerds/postgresql/blob/master/standby/hstore.sql)
 
 ### HEALTHCHECK
 
