@@ -93,6 +93,7 @@ Both, "stack.yml" and "docker-compose.yml" include a healthcheck of master and s
 
 ## References
 
+- [Postgres - Logical Replication](https://www.postgresql.org/docs/current/logical-replication-publication.html)
 - [Streaming_Replication](https://wiki.postgresql.org/wiki/Streaming_Replication)
 - [Replication between postgresql versions using-logical replication](https://www.percona.com/blog/2019/04/04/replication-between-postgresql-versions-using-logical-replication/)
 - [Postgres Replication, with SSL](https://blog.raveland.org/post/postgresql_sr/)
